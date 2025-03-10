@@ -21,12 +21,12 @@ A modern web application built with TailwindCSS and Bootstrap.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/webdev_project.git
+git clone https://github.com/saiyam0211/BookStore.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd webdev_project
+cd BookStore
 ```
 
 3. Install dependencies:
