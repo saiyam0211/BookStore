@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>48 Laws of Power - Book Details</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Custom styles for 48 Laws of Power page */
+      :root {
+        --book-primary: #c41e3a;
+        --book-secondary: #8b0000;
+      }
+
+      .book-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .book-header {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .book-cover {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .book-cover:hover {
+        transform: translateY(-10px);
+      }
+
+      .book-info h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, var(--book-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .book-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .meta-item i {
+        color: var(--book-primary);
+      }
+
+      .book-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .action-btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--book-primary), var(--book-secondary));
+        color: white;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(196, 30, 58, 0.3);
+      }
+
+      .secondary-btn {
+        border: 2px solid var(--book-primary);
+        color: var(--book-primary);
+      }
+
+      .secondary-btn:hover {
+        background: var(--book-primary);
+        color: white;
+      }
+
+      .book-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--book-primary);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .section-card h3 {
+        color: var(--book-primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-section {
+        margin-top: 4rem;
+      }
+
+      .review-card {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .rating {
+        color: var(--book-primary);
+      }
+
+      .back-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--book-primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="../index.html" class="nav-logo">📚 BookStore</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#categories" class="nav-link">Categories</a>
+        <a href="../index.html#authors" class="nav-link">Authors</a>
+        <a href="../index.html#newsletter" class="nav-link">Newsletter</a>
+      </div>
+    </nav>
+
+    <main class="book-container">
+      <div class="book-header">
+        <img src="/public/images/power.png" alt="48 Laws of Power" class="book-cover">
+        <div class="book-info">
+          <h1>48 Laws of Power</h1>
+          <div class="book-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span>Robert Greene</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-star"></i>
+              <span>4.8 (2.5k reviews)</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-book"></i>
+              <span>480 pages</span>
+            </div>
+          </div>
+          <p class="book-description">
+            Amoral, cunning, ruthless, and instructive, this piercing work distills three thousand years of the history of power into 48 well-explicated laws. As attention-grabbing in its design as it is in its content, this bold volume outlines the laws of power in their unvarnished essence, synthesizing the philosophies of Machiavelli, Sun-tzu, Carl von Clausewitz, and other great thinkers.
+          </p>
+          <div class="action-buttons">
+            <button class="action-btn primary-btn">
+              <i class="fas fa-shopping-cart mr-2"></i>
+              Buy Now
+            </button>
+            <button class="action-btn secondary-btn">
+              <i class="fas fa-bookmark mr-2"></i>
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-sections">
+        <div class="section-card">
+          <h3>Key Themes</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Power Dynamics</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Strategic Thinking</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Human Psychology</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Historical Analysis</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>What You'll Learn</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Master Power Dynamics</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Strategic Decision Making</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Understanding Human Nature</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Historical Wisdom</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Reader Benefits</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Career Advancement</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Better Decision Making</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Strategic Mindset</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Life Mastery</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h2 class="section-title mb-8">Reader Reviews</h2>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?portrait" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">John Doe</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "A masterpiece in understanding power dynamics. This book has completely changed my perspective on human interactions and decision-making. Highly recommended for anyone looking to understand the subtle dynamics of power."
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?face" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">Sarah Smith</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "An eye-opening read that provides deep insights into human nature and power dynamics. The historical examples make the laws more relatable and easier to understand."
+          </p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </main>
+  </body>
+</html> 

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Art of Seduction - Book Details</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Custom styles for The Art of Seduction page */
+      :root {
+        --book-primary: #FF1493;
+        --book-secondary: #C71585;
+      }
+
+      .book-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .book-header {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .book-cover {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .book-cover:hover {
+        transform: translateY(-10px);
+      }
+
+      .book-info h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, var(--book-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .book-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .meta-item i {
+        color: var(--book-primary);
+      }
+
+      .book-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .action-btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--book-primary), var(--book-secondary));
+        color: white;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(255, 20, 147, 0.3);
+      }
+
+      .secondary-btn {
+        border: 2px solid var(--book-primary);
+        color: var(--book-primary);
+      }
+
+      .secondary-btn:hover {
+        background: var(--book-primary);
+        color: white;
+      }
+
+      .book-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--book-primary);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .section-card h3 {
+        color: var(--book-primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-section {
+        margin-top: 4rem;
+      }
+
+      .review-card {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .rating {
+        color: var(--book-primary);
+      }
+
+      .back-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--book-primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="../index.html" class="nav-logo">📚 BookStore</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#categories" class="nav-link">Categories</a>
+        <a href="../index.html#authors" class="nav-link">Authors</a>
+        <a href="../index.html#newsletter" class="nav-link">Newsletter</a>
+      </div>
+    </nav>
+
+    <main class="book-container">
+      <div class="book-header">
+        <img src="/public/images/seduction.jpg" alt="The Art of Seduction" class="book-cover">
+        <div class="book-info">
+          <h1>The Art of Seduction</h1>
+          <div class="book-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span>Robert Greene</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-star"></i>
+              <span>4.6 (2.1k reviews)</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-book"></i>
+              <span>512 pages</span>
+            </div>
+          </div>
+          <p class="book-description">
+            From the author of the multi-million copy bestseller The 48 Laws of Power comes a mesmerizing handbook on seduction: the most subtle and effective form of power. In The Art of Seduction, Greene returns with a new instruction book on the most subtle, elusive, and effective form of power because seduction isn't really about sex. It's about manipulating other people's greatest weakness: their desire for pleasure.
+          </p>
+          <div class="action-buttons">
+            <button class="action-btn primary-btn">
+              <i class="fas fa-shopping-cart mr-2"></i>
+              Buy Now
+            </button>
+            <button class="action-btn secondary-btn">
+              <i class="fas fa-bookmark mr-2"></i>
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-sections">
+        <div class="section-card">
+          <h3>Key Themes</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Psychology of Attraction</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Social Dynamics</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Historical Examples</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Character Analysis</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>What You'll Learn</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Art of Influence</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Charisma Building</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Social Intelligence</li>
+            <li><i class="fas fa-graduation-cap mr-2" style="color: var(--book-primary)"></i>Persuasion Skills</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Reader Benefits</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Enhanced Social Skills</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Better Understanding of People</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Improved Communication</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Personal Growth</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h2 class="section-title mb-8">Reader Reviews</h2>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?woman" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">Emma Wilson</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "A fascinating exploration of human psychology and social dynamics. The historical examples are particularly enlightening and make the concepts easy to grasp."
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?man" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">Michael Chen</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "This book offers profound insights into human nature and the psychology of attraction. The writing style is engaging and the concepts are presented in a clear, actionable way."
+          </p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </main>
+  </body>
+</html> 

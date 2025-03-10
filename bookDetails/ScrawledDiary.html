@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Scrawled Diary - Book Details</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Custom styles for The Scrawled Diary page */
+      :root {
+        --book-primary: #4B0082;
+        --book-secondary: #800080;
+      }
+
+      .book-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .book-header {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .book-cover {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .book-cover:hover {
+        transform: translateY(-10px);
+      }
+
+      .book-info h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, var(--book-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .book-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .meta-item i {
+        color: var(--book-primary);
+      }
+
+      .book-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .action-btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--book-primary), var(--book-secondary));
+        color: white;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(75, 0, 130, 0.3);
+      }
+
+      .secondary-btn {
+        border: 2px solid var(--book-primary);
+        color: var(--book-primary);
+      }
+
+      .secondary-btn:hover {
+        background: var(--book-primary);
+        color: white;
+      }
+
+      .book-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--book-primary);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .section-card h3 {
+        color: var(--book-primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-section {
+        margin-top: 4rem;
+      }
+
+      .review-card {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .rating {
+        color: var(--book-primary);
+      }
+
+      .back-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--book-primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="../index.html" class="nav-logo">📚 BookStore</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#categories" class="nav-link">Categories</a>
+        <a href="../index.html#authors" class="nav-link">Authors</a>
+        <a href="../index.html#newsletter" class="nav-link">Newsletter</a>
+      </div>
+    </nav>
+
+    <main class="book-container">
+      <div class="book-header">
+        <img src="/public/images/scrawled.jpg" alt="The Scrawled Diary" class="book-cover">
+        <div class="book-info">
+          <h1>The Scrawled Diary</h1>
+          <div class="book-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span>Den</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-star"></i>
+              <span>4.5 (1.8k reviews)</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-book"></i>
+              <span>384 pages</span>
+            </div>
+          </div>
+          <p class="book-description">
+            A haunting tale of mystery and self-discovery, The Scrawled Diary follows the journey of a young woman who discovers an old diary filled with cryptic messages and dark secrets. As she delves deeper into the mysterious entries, she uncovers a web of intrigue that spans generations and threatens to unravel everything she thought she knew about her own past.
+          </p>
+          <div class="action-buttons">
+            <button class="action-btn primary-btn">
+              <i class="fas fa-shopping-cart mr-2"></i>
+              Buy Now
+            </button>
+            <button class="action-btn secondary-btn">
+              <i class="fas fa-bookmark mr-2"></i>
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-sections">
+        <div class="section-card">
+          <h3>Key Themes</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Mystery & Suspense</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Family Secrets</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Self-Discovery</li>
+            <li><i class="fas fa-check mr-2" style="color: var(--book-primary)"></i>Historical Connections</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Story Elements</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-book-open mr-2" style="color: var(--book-primary)"></i>Complex Characters</li>
+            <li><i class="fas fa-book-open mr-2" style="color: var(--book-primary)"></i>Intricate Plot</li>
+            <li><i class="fas fa-book-open mr-2" style="color: var(--book-primary)"></i>Atmospheric Setting</li>
+            <li><i class="fas fa-book-open mr-2" style="color: var(--book-primary)"></i>Dual Timeline</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Reader Experience</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Page-Turning Suspense</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Emotional Depth</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Thought-Provoking</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Satisfying Resolution</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h2 class="section-title mb-8">Reader Reviews</h2>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?girl" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">Sophie Anderson</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "A masterfully crafted mystery that kept me guessing until the very end. The way the past and present storylines interweave is simply brilliant. Couldn't put it down!"
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?boy" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">James Rodriguez</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "The atmospheric writing and complex characters make this book truly special. The mystery unfolds at a perfect pace, revealing just enough to keep you hooked while saving the biggest surprises for last."
+          </p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </main>
+  </body>
+</html> 

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pillar of the Wolves - Book Details</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Custom styles for Pillar of the Wolves page */
+      :root {
+        --book-primary: #4169E1;
+        --book-secondary: #1E90FF;
+      }
+
+      .book-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .book-header {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      .book-cover {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .book-cover:hover {
+        transform: translateY(-10px);
+      }
+
+      .book-info h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, var(--book-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .book-meta {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .meta-item i {
+        color: var(--book-primary);
+      }
+
+      .book-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .action-btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, var(--book-primary), var(--book-secondary));
+        color: white;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(65, 105, 225, 0.3);
+      }
+
+      .secondary-btn {
+        border: 2px solid var(--book-primary);
+        color: var(--book-primary);
+      }
+
+      .secondary-btn:hover {
+        background: var(--book-primary);
+        color: white;
+      }
+
+      .book-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .section-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--book-primary);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .section-card h3 {
+        color: var(--book-primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-section {
+        margin-top: 4rem;
+      }
+
+      .review-card {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .reviewer-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .rating {
+        color: var(--book-primary);
+      }
+
+      .back-btn {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--book-primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <a href="../index.html" class="nav-logo">📚 BookStore</a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../index.html#categories" class="nav-link">Categories</a>
+        <a href="../index.html#authors" class="nav-link">Authors</a>
+        <a href="../index.html#newsletter" class="nav-link">Newsletter</a>
+      </div>
+    </nav>
+
+    <main class="book-container">
+      <div class="book-header">
+        <img src="/public/images/pillarOfTheWolves.jpg" alt="Pillar of the Wolves" class="book-cover">
+        <div class="book-info">
+          <h1>Pillar of the Wolves</h1>
+          <div class="book-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span>Lola Glass</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-star"></i>
+              <span>4.9 (2.8k reviews)</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-book"></i>
+              <span>420 pages</span>
+            </div>
+          </div>
+          <p class="book-description">
+            In a world where humans and wolves share an ancient bond, one girl discovers she holds the key to both species' survival. Pillar of the Wolves follows the extraordinary journey of Maya, a young woman who discovers she can communicate with wolves in ways no one has done for centuries. As dark forces threaten both human and wolf communities, Maya must embrace her unique abilities and unite two worlds before it's too late.
+          </p>
+          <div class="action-buttons">
+            <button class="action-btn primary-btn">
+              <i class="fas fa-shopping-cart mr-2"></i>
+              Buy Now
+            </button>
+            <button class="action-btn secondary-btn">
+              <i class="fas fa-bookmark mr-2"></i>
+              Add to Wishlist
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-sections">
+        <div class="section-card">
+          <h3>Key Themes</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-paw mr-2" style="color: var(--book-primary)"></i>Human-Animal Bond</li>
+            <li><i class="fas fa-paw mr-2" style="color: var(--book-primary)"></i>Environmental Conservation</li>
+            <li><i class="fas fa-paw mr-2" style="color: var(--book-primary)"></i>Ancient Magic</li>
+            <li><i class="fas fa-paw mr-2" style="color: var(--book-primary)"></i>Coming of Age</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>World Building</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-mountain mr-2" style="color: var(--book-primary)"></i>Rich Mythology</li>
+            <li><i class="fas fa-mountain mr-2" style="color: var(--book-primary)"></i>Detailed Lore</li>
+            <li><i class="fas fa-mountain mr-2" style="color: var(--book-primary)"></i>Magical Systems</li>
+            <li><i class="fas fa-mountain mr-2" style="color: var(--book-primary)"></i>Unique Culture</li>
+          </ul>
+        </div>
+        <div class="section-card">
+          <h3>Reader Experience</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Immersive Adventure</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Emotional Connection</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Environmental Awareness</li>
+            <li><i class="fas fa-star mr-2" style="color: var(--book-primary)"></i>Inspiring Journey</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h2 class="section-title mb-8">Reader Reviews</h2>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?teen" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">Luna Walker</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "An absolutely enchanting story that beautifully weaves together themes of nature, magic, and self-discovery. The world-building is incredible, and the connection between humans and wolves is portrayed in such a unique and moving way."
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <img src="https://source.unsplash.com/random/50x50/?young" alt="Reviewer" class="reviewer-avatar">
+            <div>
+              <h4 class="text-white">River Chen</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "This book is a masterpiece of fantasy storytelling. The environmental messages are powerful without being preachy, and the character development is outstanding. I couldn't put it down!"
+          </p>
+        </div>
+      </div>
+
+      <a href="../index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </main>
+  </body>
+</html> 
